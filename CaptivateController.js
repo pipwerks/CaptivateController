@@ -16,7 +16,8 @@ function debug(text) {
 /* ======================================================
 
 CaptivateController()
-Version 0.9.2, works with Adobe Captivate 2, 3, 4 & 5
+Version 0.9.3, works with Adobe Captivate 2, 3, 4 & 5
+Copyright (c) 2009-2011 Philip Hutchison
 http://pipwerks.com/lab/captivate
 MIT-style license. Full license text can be found at
 http://www.opensource.org/licenses/mit-license.php
