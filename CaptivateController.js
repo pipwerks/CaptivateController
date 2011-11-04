@@ -386,6 +386,25 @@ var CaptivateController = function (swfID, usesExternalSkin){
 
     };
 
+    var setCPVariableValue = function (param, value){
+
+        if(!isCaptivateSWF()){ return FALSE; }
+
+        var result = null,
+            skin = (typeof query_external_skin !== UNDEFINED && query_external_skin) ? "" : skinPath;
+
+        //Try the main SWF first, then if not found try without skin path
+        try {
+            swf[setMethod](skin + param, value);
+        } catch(e9){
+            try {
+                swf[setMethod](param, value);
+            } catch(e10){
+                /* do nothing */
+            }
+        }
+
+    };
 
     // --- API misc. ---
     this.swf = swf;
@@ -447,6 +466,9 @@ var CaptivateController = function (swfID, usesExternalSkin){
         if(version > 3){ return (getInfo("cpInfoHasPlaybar")) ? TRUE : FALSE; }
         return (getInfo("rdinfoHasPlaybar")) ? TRUE : FALSE;
     };
+
+    // --- API for setting data ---
+    this.set = function(param, value){ setCPVariableValue(param, value); }
 
     /* --- Flash (not Captivate) properties --- */
     this.percentLoaded = function (){ return swf.PercentLoaded(); };
