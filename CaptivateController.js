@@ -15,7 +15,7 @@ function debug(text) {
 
 /* ======================================================
 
-CaptivateController() v0.9.20111123
+CaptivateController() v0.9.20111220
 https://github.com/pipwerks/CaptivateController
 Copyright (c) Philip Hutchison
 MIT-style license: http://pipwerks.mit-license.org/
@@ -387,7 +387,7 @@ var CaptivateController = function (swfID, usesExternalSkin){
 
     };
 
-    var setCPVariableValue = function (param, value){
+    var setCPVariableValue = function (param, value, query_external_skin){
 
         if(!isCaptivateSWF()){ return FALSE; }
 
