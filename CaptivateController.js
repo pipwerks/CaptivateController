@@ -469,7 +469,7 @@ var CaptivateController = function (swfID, usesExternalSkin){
     };
 
     // --- API for setting data ---
-    this.set = function(param, value){ setCPVariableValue(param, value); }
+    this.set = function(param, value){ setCPVariableValue(param, value); };
 
     /* --- Flash (not Captivate) properties --- */
     this.percentLoaded = function (){ return swf.PercentLoaded(); };
